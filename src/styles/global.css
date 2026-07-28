@@ -1,0 +1,173 @@
+:root {
+    --clr-night-blue: hsl(260 63% 18%);
+    --clr-light-night-blue: hsl(260 64% 13%);
+    --clr-light-light-night-blue: hsl(261 70% 8%);
+
+    --clr-cyan: hsl(168 100% 50%);
+    --clr-violet-selected: hsl(263 70% 50%);
+
+    --clr-white: hsl(0 0% 100%);
+    --clr-text-paragraph: hsl(260 41% 90%);
+    --clr-dates: hsl(260 14% 58%);
+
+    --font-family: "Montserrat", sans-serif;
+
+    --fs-100: 0.625rem;
+    --fs-200: 0.75rem;
+    --fs-300: 0.875rem;
+    --fs-400: 1rem; 
+    --fs-500: 1.5rem;
+    --fs-600: 2rem;
+
+    --fw-500: 500;
+    --fw-600: 600;
+    --fw-700: 700;
+}
+
+/* #region CSS RESET */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+/* #endregion */
+
+
+/* #region NORMAL CSS */
+body {
+    background-color: var(--clr-night-blue);
+    font-family: var(--font-family);
+}
+/* #endregion */
+
+
+/* #region UTILITY CLASSES */
+.clr-night-blue {
+    color: var(--clr-night-blue);
+}
+.clr-light-night-blue {
+    color: var(--clr-light-night-blue);
+}
+.clr-cyan {
+    color: var(--clr-cyan);
+}
+.clr-white {
+    color: var(--clr-white);
+}
+.clr-dates {
+    color: var(--clr-dates);
+}
+
+.bg-night-blue {
+    background-color: var(--clr-night-blue);
+}
+.bg-light-night-blue {
+    background-color: var(--clr-light-night-blue);
+}
+.bg-light-light-night-blue {
+    background-color: var(--clr-light-light-night-blue);
+}
+.bg-cyan {
+    background-color: var(--clr-cyan);
+}
+.bg-violet-selected {
+    background-color: var(--clr-violet-selected);
+}
+
+.fs-100 {
+    font-size: var(--fs-100);
+}
+.fs-200 {
+    font-size: var(--fs-200);
+}
+.fs-300 {
+    font-size: var(--fs-300);
+}
+.fs-400 {
+    font-size: var(--fs-400);
+}
+.fs-500 {
+    font-size: var(--fs-500);
+}
+.fs-600 {
+    font-size: var(--fs-600);
+}
+
+.fw-500 {
+    font-weight: var(--fw-500);
+}
+.fw-600 {
+    font-weight: var(--fw-600);
+}
+.fw-700 {
+    font-weight: var(--fw-700);
+}
+/* #endregion */
