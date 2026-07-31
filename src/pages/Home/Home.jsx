@@ -4,7 +4,7 @@ import Content from "../../components/Content/Content";
 export default function Home() {
   return (
     <>
-        <Header title="Home" search={true}/>
+        <Header title="Home" search={false}/>
         <Content />
     </>
   );

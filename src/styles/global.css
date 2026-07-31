@@ -1,7 +1,7 @@
 :root {
-    --clr-night-blue: hsl(260 63% 18%);
+    --clr-night-blue:  hsl(261 70% 8%);
     --clr-light-night-blue: hsl(260 64% 13%);
-    --clr-light-light-night-blue: hsl(261 70% 8%);
+    --clr-light-light-night-blue: hsl(260, 63%, 18%);
 
     --clr-cyan: hsl(168 100% 50%);
     --clr-violet-selected: hsl(263 70% 50%);
@@ -9,6 +9,9 @@
     --clr-white: hsl(0 0% 100%);
     --clr-text-paragraph: hsl(260 41% 90%);
     --clr-dates: hsl(260 14% 58%);
+
+    --clr-active-cyan: hsl(168, 97%, 40%);
+    --clr-active-night-blue:  hsl(260, 68%, 6%);
 
     --font-family: "Montserrat", sans-serif;
 

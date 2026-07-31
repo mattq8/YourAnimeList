@@ -1,0 +1,59 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.bottom {
+    margin-block-start: -9rem;
+    flex: 1;
+    z-index: 10;
+    padding: 2rem;
+    border-radius: 3rem 3rem 0 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    animation: scale-opacity 1s forwards;
+}
+
+.p {
+    line-height: 1.3rem;
+    text-align: center;
+}
+
+.button {
+    display: block;
+    border: 0;
+    padding-block: 0.5rem;
+    border-radius: 2rem;
+    box-shadow: 5px 10px 40px 3px rgba(12, 12, 12, 0.5);
+    text-align: center;
+    text-decoration: none;
+
+    transition:
+        transform 0.5s ease-out,
+        background-color 0.5s ease-out;
+}
+
+.btnSignup:active {
+    background-color: var(--clr-active-cyan);
+}
+
+.btnSignin:active {
+    background-color: var(--clr-active-night-blue);
+}
+
+.button:active {
+    transform: scale(0.97);
+}
+
+@keyframes scale-opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

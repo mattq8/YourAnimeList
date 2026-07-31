@@ -9,11 +9,29 @@
 }
 .searchBar {
     display: flex;
+    align-items: center;
     gap: 0.3rem;
     width: 100%;
     padding: 0.375rem 0.25rem;
     border-radius: 0.625rem;
 }
+.searchBar svg {
+    width: 1.875rem;
+}
 .searchBar input {
+    flex: 1;
+    margin-inline-end: 0.25rem;
+    padding-inline-start: 0.1rem;
     border: 0;
+    height: 100%;
+}
+.searchBar input::placeholder {
+    color: var(--clr-dates);
+}
+.searchBar input:focus:not(:focus-visible) {
+    outline: none;
+}
+.searchBar input:focus-visible {
+    outline: 2px solid #6c5ce7;
+    border-radius: 0 0.625rem 0.625rem 0;
 }
