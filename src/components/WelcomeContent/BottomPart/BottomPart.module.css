@@ -1,0 +1,53 @@
+.bottom {
+    margin-block-start: -9rem;
+    flex: 1;
+    z-index: 10;
+    padding: 1.5rem 2rem;
+    border-radius: 3rem 3rem 0 0;
+}
+
+.slideUp {
+    /* margin-block-start: -14rem; */
+    animation: slideUp 0.4s forwards;
+}
+
+@keyframes slideUp {
+    from {
+        margin-block-start: -9rem;
+    }
+    to {
+        margin-block-start: -14rem;
+    }
+}
+
+.slideDown {
+    animation: slideDown 0.4s forwards;
+}
+
+@keyframes slideDown {
+    from {
+        margin-block-start: -14rem;
+    }
+    to {
+        margin-block-start: -9rem;
+    }
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.animated {
+    animation: opacity 1s forwards;
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

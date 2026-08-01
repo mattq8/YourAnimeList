@@ -1,12 +1,19 @@
-.container {
+.form {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    flex: 1;
+    gap: 1.8rem;
 }
 
-.p {
-    line-height: 1.3rem;
-    text-align: center;
+.input {
+    padding-inline: 0.75rem;
+    padding-block: 0.5rem;
+    border-radius: 0.625rem;
+    border: 0;
+}
+
+.input::placeholder {
+    color: var(--clr-dates);
 }
 
 .button {
@@ -22,15 +29,13 @@
         transform 0.5s ease-out,
         background-color 0.5s ease-out;
 }
-
-.btnSignup:active {
+.button:active {
+    transform: scale(0.97);
     background-color: var(--clr-active-cyan);
 }
 
-.btnSignin:active {
-    background-color: var(--clr-active-night-blue);
-}
-
-.button:active {
-    transform: scale(0.97);
+.account {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
 }

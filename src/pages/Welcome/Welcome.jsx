@@ -1,12 +1,9 @@
-import { useState } from "react";
 import SplashScreen from "../../components/SplashScreen/SplashScreen";
 import WelcomeContent from "../../components/WelcomeContent/WelcomeContent";
 
-export default function Welcome() {
-    const [showWelcome, setShowWelcome] = useState(false);
-
-    if (showWelcome) {
+export default function Welcome({ hasSeenSplash, onSplashFinish }) {
+    if (hasSeenSplash) {
         return <WelcomeContent/>
     }
-    return <SplashScreen onFinish={() => setShowWelcome(true)}/>
+    return <SplashScreen onFinish={onSplashFinish}/>
 }

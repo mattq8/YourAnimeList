@@ -7,14 +7,25 @@
     height: 35rem;
     object-fit: cover;
     z-index: 1;
-    animation: scale-opacity 1s forwards;
 }
 
 .title {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    animation: scale-opacity 1s forwards;
+}
+
+.animated {
+    animation: opacity 1s forwards;
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
