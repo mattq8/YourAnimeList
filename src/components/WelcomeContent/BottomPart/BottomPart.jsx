@@ -1,6 +1,6 @@
 import styles from "./BottomPart.module.css";
 
-export default function BottomPart({ children, slideUp, slideDown, animated }) {
+export default function BottomPart({ children, slideUp, slideDown, animated, noSlide }) {
     let animationClass = "";
 
     if (slideUp) {
@@ -9,6 +9,8 @@ export default function BottomPart({ children, slideUp, slideDown, animated }) {
         animationClass = styles.flex + " " + styles.slideDown; 
     } else if (animated) {
         animationClass = styles.flex + " " + styles.animated;
+    } else if (noSlide) {
+        animationClass = styles.noSlide;
     }
 
 
