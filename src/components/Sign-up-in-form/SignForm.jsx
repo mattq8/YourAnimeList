@@ -2,6 +2,7 @@ import styles from './SignForm.module.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { supabase } from '../lib/supabaseClient';
+import Button from '../Button/Button';
 
 
 export default function SignForm({ title, phrase, link }) {
@@ -98,7 +99,7 @@ export default function SignForm({ title, phrase, link }) {
                 {passwordError && <p className={`${styles.errorText} fs-100`}>{passwordError}</p>}
             </div>
 
-            <button type="submit" className={`${styles.button} clr-light-night-blue fs-300 fw-600 bg-cyan`}>{title}</button>
+            <Button title={title} accent={title === "Accedi" ? false : true} fs="fs-300"/>
             <div className={styles.account}>
                 <p className="clr-dates fs-400 fw-600">{phrase}</p>
                 <Link state={{ noSlide: true }} className="clr-dates fs-400 fw-600"

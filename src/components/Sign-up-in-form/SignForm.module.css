@@ -17,24 +17,6 @@
     color: var(--clr-dates);
 }
 
-.button {
-    display: block;
-    border: 0;
-    padding-block: 0.5rem;
-    border-radius: 2rem;
-    box-shadow: 5px 10px 40px 3px rgba(12, 12, 12, 0.5);
-    text-align: center;
-    text-decoration: none;
-
-    transition:
-        transform 0.5s ease-out,
-        background-color 0.5s ease-out;
-}
-.button:active {
-    transform: scale(0.97);
-    background-color: var(--clr-active-cyan);
-}
-
 .account {
     display: flex;
     justify-content: center;

@@ -28,13 +28,6 @@
 }
 
 /* #region CSS RESET */
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 /* Prevent font size inflation */
 html {
   -moz-text-size-adjust: none;
@@ -46,6 +39,7 @@ html {
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */

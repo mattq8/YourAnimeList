@@ -1,0 +1,21 @@
+.cardHome {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    padding: 0.8rem;
+    border-radius: 1rem;
+}
+
+.info {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.coverImg {
+    width: 5.5rem;
+    height: auto;
+}
+
+.title {
+    line-height: 1rem;
+}

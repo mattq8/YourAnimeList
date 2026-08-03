@@ -1,0 +1,5 @@
+.main {
+    margin-inline: 1.5rem;
+    display: grid;
+    gap: 2rem;
+}
