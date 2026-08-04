@@ -12,6 +12,15 @@ export default function AnimeCardHome({ animeId, userId, title, currEp, totalEp,
         e.preventDefault();
 
         if (currentEpisode >= totalEp) {
+            const { error } = await supabase
+                .from('users_animes')
+                .update({ status: "WATCHED" })
+                .eq('user_id', userId)
+                .eq('anime_id', animeId);
+            if (error) {
+                console.error("Errore: ", error.message);
+            }
+
             return;
         }
 

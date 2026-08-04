@@ -40,25 +40,30 @@ export default function Home() {
         fetchWatchingAnime();
     }, [user]);
 
-    console.log(animeList);
 
     return (
         <>
             <Header title="Home" search={false} />
             <main className={styles.main}>
-                {animeList.map((item, index) => (
-                    <AnimeCardHome
-                        key={index}
-                        animeId={item.animes.id}
-                        userId={user.id}
-                        title={item.animes.title}
-                        currEp={item.episodes_watched}
-                        totalEp={item.animes.episodes}
-                        img={item.animes.cover_url}
-                    />
-                ))}
+                {
+                    animeList.length > 0 ?
+                    animeList.map((item, index) => (
+                        <AnimeCardHome
+                            key={index}
+                            animeId={item.animes.id}
+                            userId={user.id}
+                            title={item.animes.title}
+                            currEp={item.episodes_watched}
+                            totalEp={item.animes.episodes}
+                            img={item.animes.cover_url}
+                        />
+                    )) :
+                    <p className="clr-dates fs-300 fw-500">Non stai guardando anime attualmente</p>}
             </main>
-            <NavBar />
+            <NavBar active="Home" />
         </>
     );
+
+
+
 }
