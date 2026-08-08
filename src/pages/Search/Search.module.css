@@ -1,0 +1,25 @@
+.main {
+    margin-inline: 1.5rem;
+    display: grid;
+    gap: 2rem;
+    padding-bottom: 7rem;
+}
+
+.loadMoreBtn {
+    display: block;
+    border: 0;
+    padding-block: 0.5rem;
+    padding-inline: 1rem;
+    border-radius: 2rem;
+    box-shadow: 5px 10px 40px 3px rgba(12, 12, 12, 0.5);
+    text-align: center;
+    text-decoration: none;
+
+    transition:
+        transform 0.5s ease-out,
+        background-color 0.5s ease-out;
+}
+.loadMoreBtn:active {
+    transform: scale(0.97);
+    background-color: var(--clr-active-cyan);
+}
