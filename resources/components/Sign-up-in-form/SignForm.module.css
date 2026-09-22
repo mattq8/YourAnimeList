@@ -1,0 +1,33 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 1.5rem;
+}
+
+.input {
+    padding-inline: 0.75rem;
+    padding-block: 0.5rem;
+    border-radius: 0.625rem;
+    border: 0;
+    width: 100%;
+}
+
+.input::placeholder {
+    color: var(--clr-dates);
+}
+
+.account {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+.underlined {
+    text-decoration: underline;
+}
+
+.errorText {
+    color: hsl(0, 100%, 33%);
+}

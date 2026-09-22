@@ -1,0 +1,40 @@
+.bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex: 1;
+
+    position: absolute;
+    bottom: 0rem;
+
+    z-index: 10;
+    padding: 1.5rem 2rem;
+    border-radius: 3rem 3rem 0 0;
+    width: 100%;
+}
+
+
+.normal {
+    min-height: 14rem;
+}
+
+.register {
+    min-height: 23rem;   
+}
+
+.login {
+    min-height: 20rem;
+}
+
+.animated {
+    animation: opacity 1s forwards;
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
