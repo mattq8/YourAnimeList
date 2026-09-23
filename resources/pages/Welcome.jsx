@@ -1,6 +1,7 @@
 import SplashScreen from "../components/SplashScreen/SplashScreen";
 import WelcomeContent from "../components/WelcomeContent/WelcomeContent";
 import { useState, useEffect } from "react";
+import { Head } from "@inertiajs/react";
 
 export default function Welcome() {
     const [hasSeenSplash, setHasSeenSplash] = useState(true);
@@ -17,15 +18,24 @@ export default function Welcome() {
     }
 
     if (hasSeenSplash) {
-        return <WelcomeContent />
+        return (
+            <>
+                <Head title="YAL" />
+                <WelcomeContent />
+            </>
+        );
     }
 
     return (
-        <SplashScreen
-            onFinish={() => {
-                localStorage.setItem("hasSeenSplash", "true");
-                setHasSeenSplash(true);
-            }}
-        />
+        <>
+            <Head title="YAL" />
+            <SplashScreen
+                onFinish={() => {
+                    localStorage.setItem("hasSeenSplash", "true");
+                    setHasSeenSplash(true);
+                }}
+            />
+        </>
+
     );
 }

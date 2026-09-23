@@ -5,14 +5,18 @@ import '../../components/WelcomeContent/WelcomeContent.module.css';
 
 export default function Login() {
     return (
-        <main className="container">
-            <TopPart animated={false} />
-            <BottomPart login={true}>
-                <SignForm 
-                    title="Login"
-                    phrase="Don't have an account?"
-                    link="Register"/>
-            </BottomPart>
-        </main>
+        <>
+            <Head title="YAL - Login" />
+            <main className="container">
+                <TopPart animated={false} />
+                <BottomPart login={true}>
+                    <SignForm
+                        title="Login"
+                        phrase="Don't have an account?"
+                        link="Register" />
+                </BottomPart>
+            </main>
+        </>
+
     );
 }
