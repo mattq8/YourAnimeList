@@ -1,5 +1,5 @@
 import styles from './NavBar.module.css';
-import { Link } from 'react-router-dom';
+import { Link } from '@inertiajs/react';
 
 export default function NavBar({ active }) {
     const isHomeActive = active === "Home" ? styles.isActive : styles.isNotActive;
@@ -7,11 +7,9 @@ export default function NavBar({ active }) {
     const isProfileActive = active === "Profile" ? styles.isActive : styles.isNotActive;
 
 
-
-
     return (
         <nav className={`${styles.navBar} bg-light-night-blue`}>
-            <Link to="/home" className={`${styles.container} ${isHomeActive}`}>
+            <Link href="/home" className={`${styles.container} ${isHomeActive}`}>
                 <svg
                     className={styles.navBarIcons}
                     xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +26,7 @@ export default function NavBar({ active }) {
                 </svg>
                 <span className={`${isHomeActive} fs-100 fw-500`}>Home</span>
             </Link>
-            <Link to="/search" className={`${styles.container} ${isSearchActive}`}>
+            <Link href="/search" className={`${styles.container} ${isSearchActive}`}>
                 <svg 
                     className={styles.navBarIcons} 
                     xmlns="http://www.w3.org/2000/svg" 
@@ -45,7 +43,7 @@ export default function NavBar({ active }) {
                 </svg>
                 <span className={`${isSearchActive} fs-100 fw-500`}>Cerca</span>
             </Link>
-            <Link to="/profile" className={`${styles.container} ${isProfileActive}`}>
+            <Link href="/profile" className={`${styles.container} ${isProfileActive}`}>
                 <svg
                     className={styles.navBarIcons}
                     xmlns="http://www.w3.org/2000/svg"

@@ -1,48 +1,41 @@
-import { supabase } from '../lib/supabaseClient';
 import Button from '../Button/Button';
 import styles from './AnimeCardHome.module.css';
 import { useState } from 'react';
+import { router } from '@inertiajs/react';
 
-export default function AnimeCardHome({ animeId, userId, title, currEp, totalEp, img }) {
+export default function AnimeCardHome({ animeId, title, currEp, totalEp, img }) {
     const [currentEpisode, setCurrentEpisode] = useState(currEp);
     const [isVisible, setIsVisible] = useState(true);
 
     if (!isVisible) return null;
 
-    const nextEpisode = currentEpisode + 1 > totalEp ? "No" : currentEpisode + 1;
-
     async function handleSubmit(e) {
         e.preventDefault();
 
-        if (currentEpisode >= totalEp) {
-            setIsVisible(false);
+        const isCompleted = currentEpisode + 1 >= totalEp;
+        const newEpisode = isCompleted ? totalEp : currentEpisode + 1;
 
-            const { error } = await supabase
-                .from('users_animes')
-                .update({ status: "COMPLETED" })
-                .eq('user_id', userId)
-                .eq('anime_id', animeId);
-            if (error) {
-                console.error("Errore: ", error.message);
-                setIsVisible(true);
-            }
+        setCurrentEpisode(newEpisode);
+
+        if (isCompleted) {
+            setIsVisible(false);
+            router.patch(`/home/${animeId}`, {
+                episodes_watched: newEpisode,
+                status: 'COMPLETED'
+            }, {
+                preserveScroll: true,
+                preserveState: true
+            });
 
             return;
         }
 
-        const newEpisode = currentEpisode + 1;
-        setCurrentEpisode(newEpisode);
-
-        const { error } = await supabase
-            .from('users_animes')
-            .update({ episodes_watched: newEpisode })
-            .eq('user_id', userId)
-            .eq('anime_id', animeId);
-
-        if (error) {
-            console.error("Errore durante l'aggiornamento dell'episodio: ", error.message);
-            setCurrentEpisode(currentEpisode);
-        }
+        router.patch(`/home/${animeId}`, {
+            episodes_watched: newEpisode,
+        }, {
+            preserveScroll: true,
+            preserveState: true
+        });
     }
 
     return (
@@ -51,7 +44,7 @@ export default function AnimeCardHome({ animeId, userId, title, currEp, totalEp,
             <form onSubmit={(e) => handleSubmit(e)} className={styles.info}>
                 <h4 className={`${styles.title} clr-white fs-200 fw-600`}>{title}</h4>
                 <span className="clr-dates fs-200 fw-600">Episodio: {currentEpisode}/{totalEp}</span>
-                <span className="clr-dates fs-200 fw-600">Prossimo episodio: {nextEpisode}</span>
+                <span className="clr-dates fs-200 fw-600">Prossimo episodio: {currentEpisode + 1}</span>
                 <Button title="1+ Episodio" accent={true} fs="fs-100" />
             </form>
         </div>

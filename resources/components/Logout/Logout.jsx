@@ -1,9 +1,9 @@
+import { Form } from "@inertiajs/react";
 import { Form, usePage } from "@inertiajs/react";
-import styles from '../components/Sign-up-in-form/SignForm.module.css';
 
-export default function Home() {
+export default function Logout() {
     const { auth } = usePage().props;
-
+    
     return (
         <>
             <h1 className="clr-dates">Ciao {auth.user.username}</h1>

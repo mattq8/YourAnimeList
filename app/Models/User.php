@@ -35,6 +35,6 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Anime::class)
                     ->withPivot('rating', 'status', 'episodes_watched')
-                    ->withTimestamps();;   
+                    ->withTimestamps();
     }
 }
