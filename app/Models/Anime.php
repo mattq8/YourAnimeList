@@ -18,6 +18,6 @@ class Anime extends Model
 
     public function genres(): BelongsToMany
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(Genre::class);
     }
 }

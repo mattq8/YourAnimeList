@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('anilist_id')->unique();
             $table->string('title');
-            $table->year('year');
+            $table->year('year')->nullable();
             $table->string('cover_url');
             $table->string('banner_url')->nullable();
             $table->text('description')->nullable();
