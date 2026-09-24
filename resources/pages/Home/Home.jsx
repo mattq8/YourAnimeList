@@ -2,10 +2,12 @@ import styles from './Home.module.css';
 import Header from '../../components/Header/Header';
 import NavBar from '../../components/NavBar/NavBar';
 import AnimeCardHome from '../../components/AnimeCardHome/AnimeCardHome';
+import { Head } from '@inertiajs/react';
 
 export default function Home({ watchingAnimes }) {
     return (
         <>
+            <Head title="YAL - HOME" />
             <Header title="Home" search={false} />
             <main className={styles.main}>
                 {

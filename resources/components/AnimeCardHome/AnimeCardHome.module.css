@@ -7,15 +7,23 @@
 }
 
 .info {
-    display: grid;
-    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1; 
+    min-width: 0;
 }
 
 .coverImg {
     width: 5.5rem;
-    height: auto;
+    height: 8rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
 }
 
 .title {
-    line-height: 1rem;
+    line-height: 1.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

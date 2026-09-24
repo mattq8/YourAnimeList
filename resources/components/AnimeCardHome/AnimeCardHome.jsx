@@ -43,8 +43,8 @@ export default function AnimeCardHome({ animeId, title, currEp, totalEp, img }) 
             <img className={styles.coverImg} src={img} alt={`Cover Image - ${title}`} />
             <form onSubmit={(e) => handleSubmit(e)} className={styles.info}>
                 <h4 className={`${styles.title} clr-white fs-200 fw-600`}>{title}</h4>
-                <span className="clr-dates fs-200 fw-600">Episodio: {currentEpisode}/{totalEp}</span>
-                <span className="clr-dates fs-200 fw-600">Prossimo episodio: {currentEpisode + 1}</span>
+                <span className="clr-dates fs-200 fw-600">Episode: {currentEpisode}/{totalEp}</span>
+                <span className="clr-dates fs-200 fw-600">Next episode: {currentEpisode + 1}</span>
                 <Button title="1+ Episodio" accent={true} fs="fs-100" />
             </form>
         </div>
