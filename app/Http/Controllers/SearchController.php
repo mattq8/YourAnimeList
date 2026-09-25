@@ -11,10 +11,25 @@ class SearchController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $validated = $request->validate([
+            'search' => 'sometimes|min:0|string'
+        ]);
+
+        if (isset($validated['search'])) {
+            return Inertia::render('Search/Search', [
+                'animes' => Inertia::scroll(fn() => Anime::with('genres')
+                    ->where('title', 'like', "{$validated['search']}%")
+                    ->orderBy('year', 'desc')
+                    ->paginate())
+            ]);
+        }
+
         return Inertia::render('Search/Search', [
-            'animes' => Inertia::scroll(fn () => Anime::with('genres')->paginate())
+            'animes' => Inertia::scroll(fn() => Anime::with('genres')
+                ->orderBy('year', 'desc')
+                ->paginate())
         ]);
     }
 

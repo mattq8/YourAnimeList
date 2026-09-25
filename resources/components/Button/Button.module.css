@@ -2,6 +2,7 @@
     display: block;
     border: 0;
     padding-block: 0.5rem;
+    padding-inline: 0.8rem;
     border-radius: 2rem;
     box-shadow: 5px 10px 40px 3px rgba(12, 12, 12, 0.5);
     text-align: center;

@@ -45,7 +45,9 @@ export default function AnimeCardHome({ animeId, title, currEp, totalEp, img }) 
                 <h4 className={`${styles.title} clr-white fs-200 fw-600`}>{title}</h4>
                 <span className="clr-dates fs-200 fw-600">Episode: {currentEpisode}/{totalEp}</span>
                 <span className="clr-dates fs-200 fw-600">Next episode: {currentEpisode + 1}</span>
-                <Button title="1+ Episodio" accent={true} fs="fs-100" />
+                <div className={styles.buttonWrapper}>
+                    <Button title="1+ Episodio" accent={true} fs="fs-100" />
+                </div>
             </form>
         </div>
     );
