@@ -3,12 +3,19 @@ import Header from '../../components/Header/Header';
 import NavBar from '../../components/NavBar/NavBar';
 import AnimeCardHome from '../../components/AnimeCardHome/AnimeCardHome';
 import { Head } from '@inertiajs/react';
+import { useState } from 'react';
+import SettingsMenu from '../../components/SettingsMenu/SettingsMenu';
 
 export default function Home({ watchingAnimes }) {
+    const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+
     return (
         <>
             <Head title="YAL - HOME" />
-            <Header title="Home" search={false} />
+            <Header title="Home" 
+                search={false} 
+                onOpenSettings={() => setIsSettingsOpen(true)} 
+            />
             <main className={styles.main}>
                 {
                     watchingAnimes.length > 0 ?
@@ -27,6 +34,11 @@ export default function Home({ watchingAnimes }) {
                 
             </main>
             <NavBar active="Home" />
+
+            <SettingsMenu
+                isVisible={isSettingsOpen}
+                onClose={() => setIsSettingsOpen(false)}
+            />
         </>
     );
 }

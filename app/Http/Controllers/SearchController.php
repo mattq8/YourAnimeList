@@ -21,14 +21,12 @@ class SearchController extends Controller
             return Inertia::render('Search/Search', [
                 'animes' => Inertia::scroll(fn() => Anime::with('genres')
                     ->where('title', 'like', "{$validated['search']}%")
-                    ->orderBy('year', 'desc')
                     ->paginate())
             ]);
         }
 
         return Inertia::render('Search/Search', [
             'animes' => Inertia::scroll(fn() => Anime::with('genres')
-                ->orderBy('year', 'desc')
                 ->paginate())
         ]);
     }

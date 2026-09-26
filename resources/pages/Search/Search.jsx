@@ -4,10 +4,12 @@ import { Head, InfiniteScroll, router } from '@inertiajs/react';
 import NavBar from '../../components/NavBar/NavBar';
 import AnimeCardSearch from '../../components/AnimeCardSearch/AnimeCardSearch';
 import { useEffect, useState } from 'react';
+import SettingsMenu from '../../components/SettingsMenu/SettingsMenu';
 
 export default function Search({ animes }) {
     const [searchQuery, setSearchQuery] = useState('');
     const [debounceSearch, setDebounceSearch] = useState('');
+    const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
     useEffect(() => {
         const id = setTimeout(() => {
@@ -28,11 +30,21 @@ export default function Search({ animes }) {
         })
     }, [debounceSearch]);
 
-    console.log("anime:", animes);
+    // useEffect(() => {
+    //     console.log("anime:", animes);
+    // }, [animes]);
+
     return (
         <>
             <Head title="YAL - Search" />
-            <Header title="Cerca" search={true} searchQuery={searchQuery} onSearchChange={(e) => setSearchQuery(e.target.value)} />
+            <Header 
+                title="Search" 
+                search={true} 
+                filter={true}
+                searchQuery={searchQuery} 
+                onSearchChange={(e) => setSearchQuery(e.target.value)} 
+                onOpenSettings={() => setIsSettingsOpen(true)}    
+            />
             <InfiniteScroll data="animes" preserveUrl className={styles.main}>
                 {
                     animes.data.map((anime) => (
@@ -50,6 +62,10 @@ export default function Search({ animes }) {
 
             </InfiniteScroll>
             <NavBar active="Search" />
+            <SettingsMenu
+                isVisible={isSettingsOpen}
+                onClose={() => setIsSettingsOpen(false)}
+            />
         </>
     );
 }

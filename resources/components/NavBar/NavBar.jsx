@@ -41,7 +41,7 @@ export default function NavBar({ active }) {
                         d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
                     />
                 </svg>
-                <span className={`${isSearchActive} fs-100 fw-500`}>Cerca</span>
+                <span className={`${isSearchActive} fs-100 fw-500`}>Search</span>
             </Link>
             <Link href="/profile" className={`${styles.container} ${isProfileActive}`}>
                 <svg
@@ -58,7 +58,7 @@ export default function NavBar({ active }) {
                         d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
                     />
                 </svg>
-                <span className={`${isProfileActive} fs-100 fw-500`}>Profilo</span>
+                <span className={`${isProfileActive} fs-100 fw-500`}>Profile</span>
             </Link>
         </nav>
     );

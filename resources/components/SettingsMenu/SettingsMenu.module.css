@@ -1,0 +1,77 @@
+.wrap {
+    position: absolute;
+    background-color: black;
+    width: 12rem;
+    height: 100%;
+    top: 0;
+    left: 50%;
+}
+
+.menuIcon {
+    height: 1.125rem;
+    width: 1.125rem;
+}
+
+.flex {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+    width: 100%;
+}
+
+.settingsMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.settingsMenu li {
+    position: relative;
+    border-bottom: 2px solid white;
+    padding-bottom: 0.3rem;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0, 0%, 0%, 0.5);
+    z-index: 9999;
+}
+
+.navbar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 10rem;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    z-index: 1000;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+.button svg {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.menuHeader {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 2.5rem;
+    margin-bottom: 2rem;
+}
