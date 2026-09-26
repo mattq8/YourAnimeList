@@ -1,12 +1,3 @@
-.wrap {
-    position: absolute;
-    background-color: black;
-    width: 12rem;
-    height: 100%;
-    top: 0;
-    left: 50%;
-}
-
 .menuIcon {
     height: 1.125rem;
     width: 1.125rem;

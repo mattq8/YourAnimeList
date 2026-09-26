@@ -34,7 +34,7 @@ export default function Header({ title, search, searchQuery, onSearchChange, fil
 
                         <input type="text" value={searchQuery} onChange={onSearchChange} id="search" name="search" className="clr-white fs-400 fw-600 bg-light-night-blue" placeholder="Search an anime" />
                     </div> :
-                    <span className="clr-white fs-400 fw-600">Stai guardando</span>}
+                    <span className="clr-white fs-400 fw-600">Currently watching</span>}
             </header>
     );
 }

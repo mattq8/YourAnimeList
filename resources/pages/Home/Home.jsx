@@ -29,7 +29,7 @@ export default function Home({ watchingAnimes }) {
                             img={item.cover_url}
                         />
                     ))
-                    : <p className="clr-dates fs-300 fw-500">Non stai guardando anime attualmente</p>
+                    : <p className="clr-dates fs-300 fw-500">You aren't currently watching any anime.</p>
                 }
                 
             </main>

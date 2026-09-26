@@ -5,11 +5,13 @@ import NavBar from '../../components/NavBar/NavBar';
 import AnimeCardSearch from '../../components/AnimeCardSearch/AnimeCardSearch';
 import { useEffect, useState } from 'react';
 import SettingsMenu from '../../components/SettingsMenu/SettingsMenu';
+import FiltersMenu from '../../components/FiltersMenu/FiltersMenu';
 
-export default function Search({ animes }) {
+export default function Search({ animes, genres }) {
     const [searchQuery, setSearchQuery] = useState('');
     const [debounceSearch, setDebounceSearch] = useState('');
     const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+    const [isFiltersOpen, setisFiltersOpen] = useState(false);
 
     useEffect(() => {
         const id = setTimeout(() => {
@@ -30,9 +32,10 @@ export default function Search({ animes }) {
         })
     }, [debounceSearch]);
 
-    // useEffect(() => {
-    //     console.log("anime:", animes);
-    // }, [animes]);
+    useEffect(() => {
+        console.log("anime:", animes);
+    }, [animes]);
+    // console.log("Genres", genres);
 
     return (
         <>
@@ -43,7 +46,8 @@ export default function Search({ animes }) {
                 filter={true}
                 searchQuery={searchQuery} 
                 onSearchChange={(e) => setSearchQuery(e.target.value)} 
-                onOpenSettings={() => setIsSettingsOpen(true)}    
+                onOpenSettings={() => setIsSettingsOpen(true)}
+                onOpenFilters={() => setisFiltersOpen(true)}    
             />
             <InfiniteScroll data="animes" preserveUrl className={styles.main}>
                 {
@@ -65,6 +69,11 @@ export default function Search({ animes }) {
             <SettingsMenu
                 isVisible={isSettingsOpen}
                 onClose={() => setIsSettingsOpen(false)}
+            />
+            <FiltersMenu
+                isVisible={isFiltersOpen}
+                onClose={() => setisFiltersOpen(false)}
+                genres={genres}
             />
         </>
     );

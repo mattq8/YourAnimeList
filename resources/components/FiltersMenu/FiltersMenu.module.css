@@ -1,0 +1,91 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0, 0%, 0%, 0.5);
+    z-index: 9999;
+}
+
+.filtersMenu {
+    position: absolute;
+    bottom: 0;
+    height: 50%;
+    width: 100%;
+    padding: 3rem 1.5rem 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    border-radius: 3rem 3rem 0 0;
+    gap: 0.6rem;
+}
+
+.margin {
+    margin-block-end: 0.5rem;
+}
+
+.gap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.yearWrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.years {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.singleYear {
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+}
+
+.genresWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.genres {
+    display: flex;
+    flex-direction: column;
+    max-height: 100px;
+    overflow-y: auto;
+    gap: 0.8rem;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.closeBtn {
+    width: 30%;
+    height: 10px;
+    border-radius: 1rem;
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btnDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block-start: 1rem;
+}
+
+.btnDiv button {
+    padding-inline: 2.3rem;
+}
