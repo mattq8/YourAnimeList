@@ -21,6 +21,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/home/{id}', [HomeController::class, 'update'])->name('update.home');
     
     Route::get('/search', [SearchController::class, 'index'])->name('index.search');
+    Route::get('/search/{animeId}', [SearchController::class, 'show'])->name('show.search');
+
 
     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 });

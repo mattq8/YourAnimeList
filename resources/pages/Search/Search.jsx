@@ -1,6 +1,6 @@
 import styles from './Search.module.css';
 import Header from '../../components/Header/Header';
-import { Head, InfiniteScroll, router } from '@inertiajs/react';
+import { Head, InfiniteScroll, Link, router } from '@inertiajs/react';
 import NavBar from '../../components/NavBar/NavBar';
 import AnimeCardSearch from '../../components/AnimeCardSearch/AnimeCardSearch';
 import { useEffect, useState } from 'react';
@@ -40,27 +40,28 @@ export default function Search({ animes, genres }) {
     return (
         <>
             <Head title="YAL - Search" />
-            <Header 
-                title="Search" 
-                search={true} 
+            <Header
+                title="Search"
+                search={true}
                 filter={true}
-                searchQuery={searchQuery} 
-                onSearchChange={(e) => setSearchQuery(e.target.value)} 
+                searchQuery={searchQuery}
+                onSearchChange={(e) => setSearchQuery(e.target.value)}
                 onOpenSettings={() => setIsSettingsOpen(true)}
-                onOpenFilters={() => setisFiltersOpen(true)}    
+                onOpenFilters={() => setisFiltersOpen(true)}
             />
             <InfiniteScroll data="animes" preserveUrl className={styles.main}>
                 {
                     animes.data.map((anime) => (
-                        <AnimeCardSearch
-                            key={anime.id}
-                            img={anime.cover_url}
-                            title={anime.title}
-                            episodes={anime.episodes}
-                            year={anime.year}
-                            genres={anime.genres.map((genre) => (genre.name)).join(', ')}
-                            status={anime.status}
-                        />
+                        <Link key={anime.id} href={`search/${anime.id}`}>
+                            <AnimeCardSearch
+                                img={anime.cover_url}
+                                title={anime.title}
+                                episodes={anime.episodes}
+                                year={anime.year}
+                                genres={anime.genres.map((genre) => (genre.name)).join(', ')}
+                                status={anime.status}
+                            />
+                        </Link>
                     ))
                 }
 

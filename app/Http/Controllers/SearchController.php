@@ -69,7 +69,12 @@ class SearchController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $anime = Anime::with('genres')->findOrFail($id);
+
+
+        return Inertia::render('AnimeDetails/AnimeDetails', [
+            'anime' => $anime
+        ]);
     }
 
     /**
